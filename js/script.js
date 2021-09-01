@@ -10,10 +10,25 @@ while (isNaN(numeroDiCelle)) {
 function disegnaTabella(num) {
     
     for (var i = 1; i <= num; i++) {
-        document.getElementById("campo-da-gioco").innerHTML += `<div class="quadrato"> ${i} </div>`
+        document.getElementById("campo-da-gioco").innerHTML += `<div class="quadrato">${i}</div>`
     }
 
 }
 disegnaTabella(numeroDiCelle);
 
 // Al click su una cella dovrà essere mostrato con un alert il numero della cella e il suo background diventerà rosso.
+
+var campoDaGioco = document.getElementById("campo-da-gioco");
+
+campoDaGioco.addEventListener("click",
+    function(event) {
+
+        if (event.target.classList.value == "quadrato") {
+            event.target.classList.add("rosso");
+            alert(event.target.innerHTML);
+        } else {
+            event.target.classList.remove("rosso");
+        }
+        
+    }
+);
