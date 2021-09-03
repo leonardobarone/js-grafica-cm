@@ -31,4 +31,17 @@ campoDaGioco.addEventListener("click",
         }
         
     }
-);
+); 
+// dato l'array e l'elemento da cercare, restituisce true se l'elemento è presente altrimenti false
+function inArray(arr, el) {
+    
+    var count = 0;
+   
+    while (count < arr.length && trovato == false) {
+        if (arr[count] == el) {
+            return true;
+        }
+        count++
+    }
+    return false;
+}
